@@ -61,22 +61,19 @@ $(document).ready(function () {
     });
 });
 // görev 7
-$(document).ready(function(){
-    $("#gorev7 > button").click(function(){
+$(document).ready(function () {
+    $("#gorev7 > button").click(function () {
         var can = $("h2:contains(can)");
-        for(var i = 0; i < can.length; i++)
-        {
+        for (var i = 0; i < can.length; i++) {
             document.getElementById("gorev7").innerHTML += "<li>" + can[i].innerHTML + "</li>"
         }
     });
 });
 // görev 8
-gorev8.onclick = (function () {
-    $("article>div>p").load("lorem.html");
-    $.ajax({
-        url: "lorem.html",
-        type: "get",
-    });
+$("#gorev8 > button").click(function () {
+    $("h1").after("<p id=ajax>");
+    $("#ajax").load("lorem.html");
+    $("h1").after("<h2>Lorem</h2>");
 });
 // görev 9
 $("h2, h1").hover(function () {
@@ -89,6 +86,6 @@ $(document).ready(function () {
         var resim = $("<div>");
         $("footer").append(resim);
         resim.addClass("dv");
-        $('.dv').prepend('<img src="img/check.png" width="100px" height="100px" style="margin-top:-1450px; position:fixed; right:250px;"/>');
+        $('.dv').prepend('<img src="img/check.png" style="height:100px; width:100px; position:fixed; bottom:0px; right:0px;" />');
     });
 });
